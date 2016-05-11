@@ -16,4 +16,4 @@ Source: https://kotlinlang.org/docs/tutorials/command-line.html and https://kotl
 
 Running using:
 
-    java -jar target/
+    java -jar target/mavenexample-0.0.1-SNAPSHOT-jar-with-dependencies.jar
