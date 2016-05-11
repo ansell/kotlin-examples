@@ -9,6 +9,8 @@ Kotlin : https://gist.github.com/ansell/3606df67ccd89bf9d2e7
 Compilation
 ===========
 
+Source: https://kotlinlang.org/docs/tutorials/command-line.html
+
 Include the runtime to be self-contained:
 
     kotlinc hello.kt -include-runtime -d hello.jar
