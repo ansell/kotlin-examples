@@ -24,5 +24,6 @@ fun main(args: Array<String>) {
 		}
 		// as? is a null-safe cast operator that will only translate strings through, and return null instead of failing to cast
 		println(test as? String)
+		println(test)
 	}
 }
