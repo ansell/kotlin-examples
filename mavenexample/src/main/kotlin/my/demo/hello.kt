@@ -15,5 +15,11 @@ fun main(args: Array<String>) {
 			"Hello"	-> println("G'day")
 			"World"	-> println("Earth")
 		}
+		val test = when (index) {
+			in 0..1	-> "Going..." 
+			3	-> "... Gone"
+			else -> ""
+		}
+		println(test)
 	}
 }
