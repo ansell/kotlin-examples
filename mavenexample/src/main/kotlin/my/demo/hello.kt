@@ -9,4 +9,7 @@ fun main(args: Array<String>) {
 	for(i in args.indices) {
 		println("$i = ${args[i]}")
 	}
+	for((index, value) in args.withIndex()) {
+		println("$index = ${value}")
+	}
 }
