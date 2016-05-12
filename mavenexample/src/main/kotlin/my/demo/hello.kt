@@ -18,8 +18,8 @@ fun main(args: Array<String>) {
 		val test = when (index) {
 			in 0..1	-> "Going..." 
 			3	-> "... Gone"
-			!in 2..5 -> "still here?"
 			in 6..7	-> index // FIXME: This isn't being triggered
+			!in 2..5 -> "still here?"
 			else -> null
 		}
 		println(test as? String)
