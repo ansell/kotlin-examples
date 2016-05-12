@@ -19,8 +19,8 @@ fun main(args: Array<String>) {
 			in 0..1	-> "Going..." 
 			3	-> "... Gone"
 			!in 2..5 -> "still here?"
-			else -> ""
+			else -> null
 		}
-		println(test)
+		println(test as? String)
 	}
 }
