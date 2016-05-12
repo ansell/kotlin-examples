@@ -11,5 +11,9 @@ fun main(args: Array<String>) {
 	}
 	for((index, value) in args.withIndex()) {
 		println("$index = ${value}")
+		when (value) {
+			"Hello"	-> println("G'day")
+			"World"	-> println("Earth")
+		}
 	}
 }
