@@ -18,10 +18,11 @@ fun main(args: Array<String>) {
 		val test = when (index) {
 			in 0..1	-> "Going..." 
 			3	-> "... Gone"
-			in 6..7	-> index // FIXME: This isn't being triggered
+			in 6..7	-> index // Note, these do not appear with the null-safe cast operator below, and look as if they are null
 			!in 2..5 -> "still here?"
 			else -> null
 		}
+		// as? is a null-safe cast operator that will only translate strings through, and return null instead of failing to cast
 		println(test as? String)
 	}
 }
