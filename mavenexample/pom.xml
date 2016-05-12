@@ -31,8 +31,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<kotlin.version>1.0.1-2</kotlin.version>
+		<main.class>my.demo.HelloKt</main.class>
 	</properties>
 
 	<prerequisites>
@@ -64,7 +65,11 @@
 			<plugin>
 				<artifactId>kotlin-maven-plugin</artifactId>
 				<groupId>org.jetbrains.kotlin</groupId>
-			</plugin>		
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -91,7 +96,42 @@
 							</goals>
 						</execution>
 					</executions>
-				</plugin>		
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.5.1</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+					<executions>
+						<!-- Replacing default-compile as it is treated specially by maven -->
+						<execution>
+							<id>default-compile</id>
+							<phase>none</phase>
+						</execution>
+						<!-- Replacing default-testCompile as it is treated specially by maven -->
+						<execution>
+							<id>default-testCompile</id>
+							<phase>none</phase>
+						</execution>
+						<execution>
+							<id>java-compile</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>compile</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>java-test-compile</id>
+							<phase>test-compile</phase>
+							<goals>
+								<goal>testCompile</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -100,7 +140,7 @@
 						<archive>
 							<manifest>
 								<addClasspath>true</addClasspath>
-								<mainClass>HelloKt</mainClass>
+								<mainClass>${main.class}</mainClass>
 							</manifest>
 						</archive>
 					</configuration>
@@ -119,7 +159,7 @@
 							<configuration>
 								<archive>
 									<manifest>
-										<mainClass>HelloKt</mainClass>
+										<mainClass>${main.class}</mainClass>
 									</manifest>
 								</archive>
 								<descriptorRefs>
