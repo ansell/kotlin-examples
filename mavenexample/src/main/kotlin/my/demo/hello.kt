@@ -19,6 +19,7 @@ fun main(args: Array<String>) {
 			in 0..1	-> "Going..." 
 			3	-> "... Gone"
 			!in 2..5 -> "still here?"
+			in 6..7	-> index // FIXME: This isn't being triggered
 			else -> null
 		}
 		println(test as? String)
